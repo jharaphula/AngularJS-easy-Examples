@@ -1,0 +1,26 @@
+<!doctype html>
+<html ng-app="EvtMod">
+<head>
+<title>Example to use Events in AngularJS</title>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.1/angular.min.js"></script>
+<script type="text/javascript">
+var EvtMod = angular.module('EvtMod', []);
+EvtMod.controller('EvtCtrl', function ($scope) {
+$scope.singleClick = function() {
+	alert('This is a single click event.');
+};
+$scope.doubleClick = function() {
+	alert('This is a double click.');
+};
+});
+</script>
+</head>
+<body ng-controller="EvtCtrl">
+<div style="float:left;"><h2>Events in AngularJS</h2></div>
+<div style="float:right;"><img src="../images/infosys.gif" alt="Infosys" title="Infosys" style="width:420px;" /></div>
+<div style="clear:both;"></div>
+<hr />
+<button ng-click="singleClick()">On Click</button><br /><br />
+<button ng-dblclick="doubleClick()">Double Click</button>
+</body>
+</html>

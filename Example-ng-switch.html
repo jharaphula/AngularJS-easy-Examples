@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Switch Case using AngularJS?</title>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.8/angular.min.js"></script>
+<script type="text/javascript">
+(function(angular) {
+angular.module('CondMod', [])
+.controller('CondCtrl', ['$scope', function($scope) {
+$scope.ddlOptions = ['Blog', 'Business', 'Fashion', 'Career', 'Education', 'Others'];
+$scope.selection = $scope.ddlOptions[0];
+}]);
+})(window.angular);
+</script>
+</head>
+<body ng-app="CondMod">
+<div style="float:left;"><h2>Example of using Switch Case in AngularJS</h2></div>
+<div style="float:right;"><img src="../images/infosys.gif" alt="Infosys" title="Infosys" style="width:420px;" /></div>
+<div style="clear:both;"></div>
+
+<hr />
+<div ng-controller="CondCtrl">
+<select ng-model="selection" ng-options="item for item in ddlOptions">
+</select>
+<br /><br />
+<div ng-switch on="selection">
+<div ng-switch-when="Blog">Blog save Time.</div>
+<div ng-switch-when="Business">Business is made for Busy People.</div>
+<div ng-switch-when="Fashion">Fashion updates Regularly.</div>
+<div ng-switch-when="Career">Career is Like a Ladder.</div>
+<div ng-switch-when="Education">Education is must Required.</div>
+<div ng-switch-default>This is the Default value for Switch Case.</div>
+</div>
+</div>
+</body>
+</html>

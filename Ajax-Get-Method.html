@@ -1,0 +1,27 @@
+<!doctype html>
+<html ng-app="myApp">
+<head>
+<title>AngularJS Ajax Get method</title>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.7/angular.min.js"></script>
+<script>
+var app = angular.module('myApp', []);
+app.controller('customersCtrl', function($scope, $http) {
+    $http.get("http://www.w3schools.com/angular/customers.php")
+    .success(function(response) {$scope.names = response.records;});
+});
+</script>
+</head>
+<body>
+<div style="float:left;"><h2>AngularJS Ajax Get method</h2></div>
+<div style="float:right;"><img src="../images/infosys.gif" alt="Infosys" title="Infosys" style="width:420px;" /></div>
+<div style="clear:both;"></div>
+<hr />
+<div ng-controller="customersCtrl"> 
+<ul>
+  <li ng-repeat="x in names">
+    {{ x.Name + ', ' + x.Country }}
+  </li>
+</ul>
+</div>
+</body>
+</html>

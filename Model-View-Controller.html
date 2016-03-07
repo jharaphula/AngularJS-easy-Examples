@@ -1,0 +1,23 @@
+<!doctype html>
+<html ng-app="EmpMod">
+<head>
+<title>Model View & Controller in AngularJS?</title>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.1/angular.min.js"></script>
+<script type="text/javascript">
+/*Creating Model using AngularJS*/
+var EmpMod = angular.module('EmpMod', []);
+/*Creating Controller using AngularJS*/
+EmpMod.controller('EmpCtrl', function ($scope) {
+$scope.Greetings = "This line of text is declared in Controller.";
+});
+</script>
+</head>
+<body ng-controller="EmpCtrl">
+<div style="float:left;"><h2>Example to Create Model View & Controller</h2></div>
+<div style="float:right;"><img src="../images/infosys.gif" alt="Infosys" title="Infosys" style="width:420px;" /></div>
+<div style="clear:both;"></div>
+<hr />
+<!--View-->
+{{ Greetings }}
+</body>
+</html>

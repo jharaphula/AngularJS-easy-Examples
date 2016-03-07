@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html ng-app="EmpMod">
+<head>
+<title>Using ng-repeat in AngularJS?</title>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.1/angular.min.js"></script>
+<script type="text/javascript">
+var EmpMod = angular.module('EmpMod', []);
+EmpMod.controller('EmpCtrl', function ($scope) {
+$scope.Employees = [ 
+{'EmpName': 'Manmohan Mohanty', 'Designation': 'Software Engineer', 'Salary': '22000'}, 
+{'EmpName': 'Nursingh Sahoo', 'Designation': 'Sr. Software Engineer', 'Salary': '42000'}, 
+{'EmpName': 'Javed Khan', 'Designation': 'Team Leader', 'Salary': '52000'}, 
+{'EmpName': 'Altamash Bhagwan', 'Designation': 'Software Engineer', 'Salary': '25000'}, 
+{'EmpName': 'Priya Yeotikar', 'Designation': 'Jr. Software Engineer', 'Salary': '18000'}, 
+{'EmpName': 'Pratap Mishra', 'Designation': 'Project Manager', 'Salary': '62000'}, 
+{'EmpName': 'Tapan Rath', 'Designation': 'QA Lead', 'Salary': '20000'}, 
+{'EmpName': 'Mamta Kamble', 'Designation': 'Testing Engineer', 'Salary': '18000'}, 
+{'EmpName': 'Satish Sharma', 'Designation': 'QA Engineer', 'Salary': '24000'}, 
+{'EmpName': 'Ajay Mohanty', 'Designation': 'Software Engineer', 'Salary': '36000'}, 
+{'EmpName': 'Deepak Tamboli', 'Designation': 'Team Leader', 'Salary': '45000'}, 
+{'EmpName': 'Chinmayee Choudhury', 'Designation': 'QA Engineer', 'Salary': '16000'}, 
+{'EmpName': 'Sanjarekha Dash', 'Designation': 'Software Engineer', 'Salary': '27000'}, 
+{'EmpName': 'Suman Koiri', 'Designation': 'UI Designer', 'Salary': '23000'}, 
+{'EmpName': 'Tapash Mishra', 'Designation': 'UX Designer', 'Salary': '18000'} 
+];
+});
+</script>
+<style type="text/css">
+.tblHeader {
+background: #000000;
+color: #ffffff;
+}
+table, th , td  {
+  border: 1px solid grey;
+  border-collapse: collapse;
+  padding: 5px;
+}
+table tr:nth-child(odd)	{
+  background-color: #f1f1f1;
+}
+table tr:nth-child(even) {
+  background-color: #ffffff;
+}
+</style>
+</head>
+<body ng-controller="EmpCtrl">
+<div style="float:left;"><h2>Example of using ng-repeat in AngularJS</h2></div>
+<div style="float:right;"><img src="../images/infosys.gif" alt="Infosys" title="Infosys" style="width:420px;" /></div>
+<div style="clear:both;"></div>
+
+<hr />
+
+<table cellpadding="2" cellspacing="2" border="0" width="100%">
+<tr>
+<td class="tblHeader">Employee Name</td>
+<td class="tblHeader">Designation</td>
+<td class="tblHeader">Salary</td>
+</tr>
+<tr ng-repeat="Employee in Employees">
+<td>{{ Employee.EmpName }}</td>
+<td>{{ Employee.Designation }}</td>
+<td>{{ Employee.Salary }}</td>
+</tr>
+</table>
+
+</body>
+</html>

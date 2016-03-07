@@ -1,0 +1,29 @@
+AngularJS .service
+------------------------------------------------------
+module.service('MyService', function() {
+
+    this.method1 = function() {
+            //..return if you want
+        }
+
+    this.method2 = function() {
+            //..return if you want
+        }
+});
+
+AngularJS .factory
+------------------------------------------------------
+module.factory('MyFactory', function() {
+
+    var factory = {}; 
+
+    factory.method1 = function() {
+            //..
+        }
+
+    factory.method2 = function() {
+            //..
+        }
+
+    return factory;
+});

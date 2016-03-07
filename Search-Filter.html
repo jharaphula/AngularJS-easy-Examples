@@ -1,0 +1,39 @@
+<!doctype html>
+<html ng-app="EmpMod">
+<head>
+<title>Example to use search filter in AngularJS?</title>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.1/angular.min.js"></script>
+<script type="text/javascript">
+var EmpMod = angular.module('EmpMod', []);
+EmpMod.controller('EmpCtrl', function ($scope) {
+$scope.Employees = [ 
+{'EmpName': 'Manmohan Mohanty'}, 
+{'EmpName': 'Nursingh Sahoo'}, 
+{'EmpName': 'Javed Khan'}, 
+{'EmpName': 'Altamash Bhagwan'}, 
+{'EmpName': 'Priya Yeotikar'}, 
+{'EmpName': 'Pratap Mishra'}, 
+{'EmpName': 'Tapan Rath'}, 
+{'EmpName': 'Mamta Kamble'}, 
+{'EmpName': 'Satish Sharma'}, 
+{'EmpName': 'Ajay Mohanty'}, 
+{'EmpName': 'Deepak Tamboli'}, 
+{'EmpName': 'Chinmayee Choudhury'}, 
+{'EmpName': 'Sanjarekha Dash'}, 
+{'EmpName': 'Suman Koiri'}, 
+{'EmpName': 'Tapash Mishra'} 
+];
+});
+</script>
+</head>
+<body ng-controller="EmpCtrl">
+<div style="float:left;"><h2>Search Filter using AngularJS</h2></div>
+<div style="float:right;"><img src="../images/infosys.gif" alt="Infosys" title="Infosys" style="width:420px;" /></div>
+<div style="clear:both;"></div>
+<hr />
+Search Employees: <input ng-model="query">
+<ul>
+<li ng-repeat="Employee in Employees | filter:query">{{Employee.EmpName}}</li>
+</ul>
+</body>
+</html>

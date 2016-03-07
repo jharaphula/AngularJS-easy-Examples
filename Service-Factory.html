@@ -1,0 +1,65 @@
+<!doctype html>
+<html ng-app="app">
+<head>
+<title>Example of AngularJS Service & Factory</title>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.7/angular.min.js"></script>
+
+<script type="text/javascript">
+var app = angular.module('app', []);
+ 
+app.service('MathService', function() {
+    this.add = function(a, b) { return a + b };
+     
+    this.subtract = function(a, b) { return a - b };
+     
+    this.multiply = function(a, b) { return a * b };
+     
+    this.divide = function(a, b) { return a / b };
+});
+ 
+app.service('CalculatorService', function(MathService){
+     
+    this.square = function(a) { return MathService.multiply(a,a); };
+    this.cube = function(a) { return MathService.multiply(a, MathService.multiply(a,a)); };
+ 
+});
+ 
+app.controller('CalculatorController', function($scope, CalculatorService) {
+ 
+    $scope.doSquare = function() {
+        $scope.answer = CalculatorService.square($scope.number);
+    }
+ 
+    $scope.doCube = function() {
+        $scope.answer = CalculatorService.cube($scope.number);
+    }
+});
+</script>
+
+</head>
+<body>
+<div style="float:left;"><h2>AngularJS Service & Factory</h2></div>
+<div style="float:right;"><img src="../images/infosys.gif" alt="Infosys" title="Infosys" style="width:420px;" /></div>
+<div style="clear:both;"></div>
+
+<hr />
+
+<div ng-controller="CalculatorController">
+	Enter a number:
+	<input type="number" ng-model="number">
+	<button ng-click="doSquare()">X<sup>2</sup></button>
+	<button ng-click="doCube()">X<sup>3</sup></button>
+	 
+	<div>Answer: {{answer}}</div>
+</div>
+
+<br />
+<br />
+<br />
+<br />
+<br />
+
+<a href="Serice-VS-Factory.txt">Service VS Factory</a>
+
+</body>
+</html>

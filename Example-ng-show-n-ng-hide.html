@@ -1,0 +1,42 @@
+<!doctype html>
+<html ng-app="CustomersMod">
+<head>
+<title>Using ng-show & ng-hide conditional filter in AngularJS?</title>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.1/angular.min.js"></script>
+<script type="text/javascript">
+var CustomersMod = angular.module('CustomersMod', []);
+CustomersMod.controller('CustomersCon', function ($scope) {
+$scope.Customers = [
+{'CusName': 'Airtel', 'Status': 'Active'},
+{'CusName': 'Vodafone', 'Status': 'inActive'},
+{'CusName': 'Aircel', 'Status': 'Active'},
+{'CusName': 'Microsoft Corporation', 'Status': 'Active'},
+{'CusName': 'Covansys', 'Status': 'inActive'},
+{'CusName': 'Infosys', 'Status': 'Active'},
+{'CusName': 'Intel', 'Status': 'Active'},
+{'CusName': 'Capgemini', 'Status': 'inActive'},
+{'CusName': 'Dell', 'Status': 'Active'},
+{'CusName': 'Intex', 'Status': 'Active'},
+{'CusName': 'Samsung', 'Status': 'inActive'},
+{'CusName': 'Nokia', 'Status': 'inActive'},
+{'CusName': 'Motorola', 'Status': 'Active'}
+];
+});
+</script>
+</head>
+<body ng-controller="CustomersCon">
+<div style="float:left;"><h2>Example of using ng-show & ng-hide</h2></div>
+<div style="float:right;"><img src="../images/infosys.gif" alt="Infosys" title="Infosys" style="width:420px;" /></div>
+<div style="clear:both;"></div>
+
+<hr />
+<b>List of Active Records</b>
+<ul>
+<li ng-repeat="Customer in Customers" ng-show="Customer.Status=='Active'">{{Customer.CusName}}</li>
+</ul>
+<b>List of inActive Records</b>
+<ul>
+<li ng-repeat="Customer in Customers" ng-hide="Customer.Status=='Active'">{{Customer.CusName}}</li>
+</ul>
+</body>
+</html>
